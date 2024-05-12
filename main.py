@@ -83,9 +83,8 @@ def get_total_cost(machines_cost_tracker: MachinesCostTracker):
     print(f"Total Cost: {machines_cost_tracker.get_total_cost()}$")
 
 
-def exit_program(machines_cost_tracker: MachinesCostTracker):
-    print("Tearing Down and Exiting")
-    # update json file (if implemented) before exiting
+def exit_program():
+    # needed teardown should be added if project is extended
     exit()
 
 
@@ -108,7 +107,6 @@ if __name__ == "__main__":
         while True:
             print(
                 "----------------------------------------------------------\n"
-                + "Cloud Machines Cost Tracker:\n"
                 + "\n".join(
                     [f"{action['id']}. {action['title']}" for action in actions]
                 )
@@ -129,4 +127,4 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Exception received: {e}")
     finally:
-        exit_program(machines_cost_tracker=machines_cost_tracker)
+        exit_program()
